@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan 5</title>
 </head>
+<style>
+    table thead th{
+        border: 1px solid salmon;
+    }
+    table tbody td{
+        border: 1px solid blueviolet;
+    }
+    table tfoot th{
+        border: 1px solid rebeccapurple;
+    }
+</style>
 <body>
     <table>
         <thead>
             <tr>
                 <th>Ini judul 1</th>
                 <th>Ini judul 2</th>
+                <th>Ini judul 3</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Ini data 1</td>
+                <td colspan="2">Ini data 1</td>
                 <td>Ini data 2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Ini data 1</td>
+                <td rowspan="2">Ini data 2</td>
+                <td>Ini data 3</td>
+            </tr>
+            <tr>
+                <td>Ini data 1</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th>Ini footer 1</th>
                 <th>Ini footer 2</th>
+                <th>Ini footer 3</th>
             </tr>
         </tfoot>
     </table>
