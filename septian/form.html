@@ -6,12 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <header style="display: flex; ">
+        <img src="image/gorilaganteng.jpg" alt="asset/image/gorilaganteng.jpg" height="100px'">
+
+        <nav>
+            <ul>
+                <li ><a href="index.html">Home</a></li>
+                <li> <a href="biodata.html">About me</a></li>
+                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=bUsUBkl6ftTV9zmC">dontclick</a></li>
+                <li><a href="form.html">lamar kerja</a></li>
+            </ul>
+        </nav>
+    </header>
     <section>
         <h1>form registrasi lamaran kerja</h1>
         <fieldset>
             <legend>formulir</legend>
        
-        <form action="#">
+        <form action="dataInput.html">
             <div>
                 <label for="">Nama</label> 
                 <br>
@@ -33,18 +45,18 @@
             <div>
                 <label for="">Jenis Kelamin</label>
                 <br>
-                <input type="radio" name="jeniskelamin" value="Pria" checked /><label for="">Pria</label>
+                <input type="radio" name="jeniskelamin" value="Pria" id="Pria" checked /><label for="">Pria</label>
                 <br>
-                <input type="radio" name="jeniskelamin" value="Wanita"/><label for="">Wanita</label>
+                <input type="radio" name="jeniskelamin" value="Wanita" id="Wanita"/><label for="">Wanita</label>
             </div>
             <br>
             <div>
                 <label for="">Hobi </label> <br>
-                <label for="">
-                    <input type="checkbox" name="terbang" value="Makan" checked> terbang
+                <label for="terbang">
+                    <input type="checkbox" name="terbang" value="terbang" id="terbang" checked> terbang
                 </label>
-                <label for="">
-                    <input type="checkbox" name="makan" value="makan" > makan
+                <label for="makan">
+                    <input type="checkbox" name="makan" value="makan" id="makan"> makan
                 </label>
             </div>
             <br>
@@ -58,8 +70,17 @@
                 </select>
             </div>
 
-        </form> </fieldset>
+        </form> 
+        <div>
+            
+        </div>
+  
     </section>
+</fieldset>
+    <br>
+    <footer align="center" style="background-color: grey; color: #ffffff; margin: 10px;">
+        made by &copy; Septian nugraha
 
+    </footer>
 </body>
 </html>
