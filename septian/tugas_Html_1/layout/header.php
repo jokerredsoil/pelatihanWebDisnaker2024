@@ -28,7 +28,15 @@
         .active{
             background-color:#00F;
             color:#FFF;
-        }      
+        }
+        #activate{
+            position:fixed;
+            bottom:0;
+            right:0;
+            color:rgba(0,0,0,0.4);
+            padding: 0 70px 40px 0;
+            font-family: arial;
+        }
     </style>
     <title>Tugas HTML 1</title>
 </head>
