@@ -8,6 +8,7 @@
     <style>
         body{
             width: 100%;
+            margin: 0;
         }
         .gambargallery  {
             display: flex;
@@ -16,11 +17,17 @@
             width: 18%;
             margin: 10px 10px 10px 5px;
         }
-
-        footer h3{
+        footer{
             background-color: grey;
-            color: white;
+            width: 100%;
         }
+        footer h3{
+    
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+      
     </style>
     <title>Tugas HTML 1</title>
 
@@ -64,7 +71,7 @@
             </div>
         </div>
     </main>
-    <footer align="center" height="200px">
+    <footer >
         <h3> made by &copy Septian Nugraha</h3>
     </footer>
 
