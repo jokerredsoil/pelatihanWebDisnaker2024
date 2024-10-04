@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pendaftaran</title>
-</head>
-<body>
+<?php 
+    $halaman = "form_pendaftaran";
+    include('layout/header.php')
+?>
     <main>
         
         <section class="formpendaftaran">
@@ -67,5 +63,6 @@
   
     </section>
     </main>
-</body>
-</html>
+<?php 
+    include('layout/footer.php')
+?>
