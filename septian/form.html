@@ -6,33 +6,60 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>form registrasi lamaran kerja</h1>
-    <form action="#">
-        <div>
-            <label for="">Nama</label> 
+    <section>
+        <h1>form registrasi lamaran kerja</h1>
+        <fieldset>
+            <legend>formulir</legend>
+       
+        <form action="#">
+            <div>
+                <label for="">Nama</label> 
+                <br>
+                <input type="text" placeholder="masukan nama lengkap">
+            </div>
             <br>
-            <input type="text" placeholder="masukan nama lengkap">
-        </div>
-        <br>
-        <div>
-            <label for="">E-mail</label> 
+            <div>
+                <label for="">E-mail</label> 
+                <br>
+                <input type="email" placeholder="masukan E-mail">
+            </div>
             <br>
-            <input type="email" placeholder="masukan E-mail">
-        </div>
-        <br>
-        <div>
-            <label for="">nomor telp</label> 
+            <div>
+                <label for="">nomor telp</label> 
+                <br>
+                <input type="number" placeholder="contoh: 08131234567">
+            </div>
             <br>
-            <input type="number" placeholder="contoh: 08131234567">
-        </div>
-        <div>
-            <label for="">Jenis Kelamin</label>
+            <div>
+                <label for="">Jenis Kelamin</label>
+                <br>
+                <input type="radio" name="jeniskelamin" value="Pria" checked /><label for="">Pria</label>
+                <br>
+                <input type="radio" name="jeniskelamin" value="Wanita"/><label for="">Wanita</label>
+            </div>
             <br>
-            <input type="radio" name="jeniskelamin" value="Pria" selected /><label for="">Pria</label>
+            <div>
+                <label for="">Hobi </label> <br>
+                <label for="">
+                    <input type="checkbox" name="terbang" value="Makan" checked> terbang
+                </label>
+                <label for="">
+                    <input type="checkbox" name="makan" value="makan" > makan
+                </label>
+            </div>
             <br>
-            <input type="radio" name="jeniskelamin" value="Wanita"/><label for="">Wanita</label>
-        </div>
-    </form>
+            <div></div>
+                <label for="">Tingkat Pendidikan</label>
+                <select name="tingkatpendidikan" id="">
+                    <option value="sd">sd</option>
+                    <option value="smp">smp</option>
+                    <option value="sma">sma</option>
+                    <option value="kuliah">kuliah</option>
+                </select>
+            </div>
+
+        </form> </fieldset>
+    </section>
 
 </body>
 </html>
