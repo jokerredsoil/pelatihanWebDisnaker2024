@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 7</title>
+</head>
+<style>
+    .form-input{
+        background: red;
+    }
+    #txtName{
+        background: blue;
+    }
+</style>
+<body>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./font.html">Font</a>
+        <a href="./favorit.html">Favorit</a>
+    </nav>
+    <h1>Form Lamaran Kerja</h1>
+    <fieldset>
+        <legend>Formulir</legend>
+        <form action="#">
+            <div>
+                <label id="txtName" for="nama">Nama</label><br>
+                <input class="form-input" type="text" id="nama" placeholder="Masukkan Nama Lengkap">
+            </div>
+            <br>
+            <div>
+                <label id="txtName" for="email">Alamat Email</label><br>
+                <input class="form-input" type="text" id="email" placeholder="Masukkan Alamat Email">
+            </div>
+            <br>
+            <div>
+                <label id="txtName" for="telepon">Nomor Telepon</label><br>
+                <input class="form-input" type="text" id="telepon" placeholder="Masukkan Nomor Telepon">
+            </div>
+            <br>
+            <div>
+                <label id="txtName">Jenis Kelamin</label>
+                <br>
+                <label id="txtName" for="pria">
+                    <input class="form-input" type="radio" id="pria">Pria
+                </label>
+                <br>
+                <label id="txtName" for="wanita">
+                    <input class="form-input" type="radio" id="wanita">Wanita
+                </label>
+                <br>
+                <label id="txtName" for="tom">
+                    <input class="form-input" type="radio" id="tom">Tom
+                </label>
+                <br>
+                <label id="txtName" for="dee">
+                    <input class="form-input" type="radio" id="dee">Dee
+                </label>
+            </div>
+            <br>
+            <div>
+                <label id="txtName">Hobi</label>
+                <br>
+                <label id="txtName" for="tidur">
+                    <input class="form-input" type="checkbox" id="tidur">Tidur
+                </label>
+                <br>
+                <label id="txtName" for="game">
+                    <input class="form-input" type="checkbox" id="game">Main Game
+                </label>
+                <br>
+                <label id="txtName" for="madang">
+                    <input class="form-input" type="checkbox" id="madang">Madang
+                </label>
+                <br>
+                <label id="txtName" for="gadang">
+                    <input class="form-input" type="checkbox" id="gadang">Bergadang
+                </label>
+                <br>
+                <label id="txtName" for="nonton">
+                    <input class="form-input" type="checkbox" id="nonton">Nonton Anime
+                </label>
+                <br>
+            </div>
+            <br>
+            <div>
+                <label id="txtName" for="pendidikan">Tingkat Pendidikan</label>
+                <br>
+                <input class="form-input" list="listpendidikan" id="pendidikan">
+                <datalist id="listpendidikan">
+                    <option value="SD">
+                    <option value="SMP">
+                    <option value="SMA">
+                    <option value="S1">
+                    <option value="S2">
+                    <option value="S3">
+                </datalist>
+            </div>
+        </form>
+    </fieldset>
+    <footer>
+        &copy; 2024 Sky Bisson Appa
+    </footer>
+</body>
+</html>
