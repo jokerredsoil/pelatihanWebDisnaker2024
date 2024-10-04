@@ -5,7 +5,7 @@
     <main>
         
         <section class="formpendaftaran">
-        <h1>form registrasi lamaran kerja</h1>
+        <h1>Formulir Pendaftaran Siswa</h1>
         <fieldset>
             <legend>formulir</legend>
        
@@ -22,7 +22,7 @@
                 <input type="date" id="date" >
             </div>
             <br>
-            <div></div>
+            <div>
                 <label for="">Agama</label>
                 <select name="tingkatpendidikan" id="">
                     <option value="islam">Islam</option>
