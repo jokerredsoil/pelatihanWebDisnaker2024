@@ -47,7 +47,7 @@
             <a href="index.php" <?php if($halaman ==  "galery"){ echo 'class="active"';}?> >| Home |</a>
             <a href="dataPenjualan.php" <?php if($halaman ==  "data_penjualan"){ echo 'class="active"';}?> > Data Penjualan |</a>
             <a href="formPendaftaran.php" <?php if($halaman ==  "form_pendaftaran"){ echo 'class="active"';}?> >|Form Pendaftaran |</a>
-            <a href="daftarhalaman.php" <?php if($halaman ==  "daftar_menu"){ echo 'class="active"';}?> > Daftar Menu |</a>
+            <a href="daftarMenu.php" <?php if($halaman ==  "daftar_menu"){ echo 'class="active"';}?> > Daftar Menu |</a>
         </nav>
     </header>
     <br>
