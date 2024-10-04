@@ -5,17 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?=$halaman?></title>
         <style>
-            .active{
-                background-color:#00F;
-                color:#FFF;
-            }
-            #activate{
+            #activate {
                 position:fixed;
                 bottom:0;
                 right:0;
                 color:rgba(0,0,0,0.4);
                 padding: 0 70px 40px 0;
                 font-family: arial;
+            }
+
+            nav > a {
+                color:#000 !important;
+                text-decoration: none;
+                padding: 10px 20px;
+                margin: 0 5px;
+                border: 1px solid #000;
+            }
+
+            .active {
+                background-color:rgba(0,0,0,0.7);
+                color:#FFF !important;
             }
         </style>
     </head>
