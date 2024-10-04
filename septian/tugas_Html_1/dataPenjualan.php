@@ -1,8 +1,10 @@
+<?php 
+    $halaman = "data_penjualan";
+    include('layout/header.php')
+?>
+
 <main>
-        <section align="center">
-            <a href="./index.html">Kembali ke home</a>
-            <h1>Table Data Penjualan</h1>
-        </section>
+       
         <section align="center">
             <table border="1" align="center" cellpadding="5" cellspacing="5">
                 <thead>
@@ -106,3 +108,7 @@
             </table>
         </section>
     </main>
+
+<?php 
+    include('layout/footer.php')
+?>

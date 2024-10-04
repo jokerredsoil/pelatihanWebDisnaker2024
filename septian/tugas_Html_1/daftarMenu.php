@@ -1,8 +1,10 @@
+<?php 
+    $halaman = "daftar_menu";
+    include('layout/header.php')
+?>
+
+
 <main>
-        <section align="center">
-            <a href="./index.html">Kembali ke home</a>
-            <h1>Daftar Menu</h1>
-        </section>
         <section>
             <h3>Makanan</h3>
             <ul>
@@ -53,3 +55,7 @@
             </ul>
         </section>
     </main>
+
+ <?php 
+    include('layout/footer.php')
+?>
