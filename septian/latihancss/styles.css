@@ -1,0 +1,36 @@
+/* external css */
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    background-color: #2b08f12a;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+header img{
+    width: 50px;
+    border-radius: 5px;
+}
+
+header nav {
+    width: 90%;
+    padding: 10px;
+    align-content: flex-end;
+    background-color: rgba(0, 17, 255, 0.192);
+    text-align: end;
+    padding: 30px 30px 30px 0;
+    
+}
+header nav a{
+    margin-right: 10px;
+    text-decoration-line: none;
+
+}
+
+header nav a:hover{
+    color: aliceblue;
+    background-color: #000;
+    border-radius: 3px ;
+
+}
