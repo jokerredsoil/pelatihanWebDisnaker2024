@@ -1,3 +1,66 @@
+body, html{height: 100%;}
 body{
     height: 100%;
+    margin: 0   ;
 }
+
+:root{
+    --navbar-height:100px;
+    --footer-height:32px;
+}
+
+.avatar{
+    height: 300px;
+    width: 300px;
+}
+
+.my-footer{
+    justify-content: center;
+    width: 100%;
+    height: var(--footer-height);
+    background-color: black;
+    color: white;
+   
+}
+.content-section{
+    min-height: calc(100% - var(--navbar-height) - var(--footer-height));
+}
+
+.social-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap:16px;
+    margin: 5px;
+    align-self: center;
+}
+
+.social-list .social-item a{
+    text-decoration: none ;
+    border-radius: 3px;
+    padding: 0 5px;
+    display: block;
+    
+}
+
+.social-list > .social-item:first-child > a{
+    background-color: #0165E1;
+    color: #ffffff;
+}
+
+.social-list > .social-item:nth-child(2) > a{
+    background: #0077b5;
+    color: #ffffff;
+    
+}
+
+.social-list > .social-item:nth-child(3) > a{
+    background: linear-gradient(32deg, #feda77, #dd2a7b, #dd2a7b);
+    color: #ffffff;
+    
+}
+.section{
+    min-height: calc(100% - var(--navbar-height) - var(--footer-height)) ;
+}
+
