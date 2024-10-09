@@ -1,8 +1,7 @@
-body, html{height: 100%;}
-body{
+body, html{
     height: 100%;
-    margin: 0   ;
 }
+
 
 :root{
     --navbar-height:100px;
