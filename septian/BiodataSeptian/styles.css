@@ -1,5 +1,6 @@
 body, html{
     height: 100%;
+    margin:0;
 }
 
 
@@ -54,6 +55,7 @@ body, html{
     
 }
 
+
 .social-list > .social-item:nth-child(3) > a{
     background: linear-gradient(32deg, #feda77, #dd2a7b, #dd2a7b);
     color: #ffffff;
@@ -63,3 +65,18 @@ body, html{
     min-height: calc(100% - var(--navbar-height) - var(--footer-height)) ;
 }
 
+/* gallery.html */
+.carousel-width > .carousel-item img,  .card-gallery > img   {
+    width: 100%;
+    height: 500px; /* Set a fixed height */
+    object-fit: cover;
+    background-color: #feda77;
+    border-radius: 5px;
+
+}
+
+.card-gallery > img {
+    
+    object-fit: fill;
+    height: 200px;
+}
