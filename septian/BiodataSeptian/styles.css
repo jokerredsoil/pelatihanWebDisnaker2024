@@ -80,3 +80,9 @@ body, html{
     object-fit: fill;
     height: 200px;
 }
+
+.card:hover {
+    box-shadow: 0 12px 5px 1px rgba(0, 0, 0, 0.473);
+    
+    
+}
