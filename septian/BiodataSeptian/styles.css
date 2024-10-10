@@ -69,15 +69,16 @@ body, html{
 .carousel-width > .carousel-item img,  .card-gallery > img   {
     width: 100%;
     height: 500px; /* Set a fixed height */
-    object-fit: cover;
+    object-fit: contain;
     background-color: #feda77;
     border-radius: 5px;
 
 }
 
 .card-gallery > img {
-    
-    object-fit: cover;
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
    
 }
 
@@ -86,3 +87,21 @@ body, html{
     
     
 }
+
+
+/* games.html */
+.responsive-iframe {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio (9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+  }
+  .responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: calc(100% - var(--navbar-height) - var(--footer-height)) ;
+    border: 0;
+  }
