@@ -60,13 +60,21 @@
         document.write(arrString[3].toLowerCase(), "</br> </br> </br>");
 
         var strStyle = "Gorila Ganteng"
-        document.write(strStyle)
-        document.write(strStyle.bold())
-        document.write(strStyle.italic())
-        document.write(strStyle.strike())
-        document.write(strStyle.fontsize())
-        document.write(strStyle.sub())
-        document.write(strStyle.sup())
+        document.write(strStyle);
+        document.write(strStyle.bold());
+        document.write(strStyle.italics());
+        document.write(strStyle.strike());
+        document.write(strStyle.fontsize(12));
+        document.write(strStyle.sub());
+        document.write(strStyle.sup());
+
+        if (umur >= 5 && umur < 6) {
+            document.write("pergi ke tk")
+        }else if(umur > 15) {
+            document.write("pergi ke sekolah")
+        }else{
+            document.write("Masih Remaja")
+        }
 
 
 
