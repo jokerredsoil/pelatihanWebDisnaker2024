@@ -10,9 +10,11 @@
 <body>
     <button type="button1" onclick=" tampilkanDataMahasiswa()" >tampilkan</button>
     <button type="button1" onclick="  tampilkanDataMahasiswa2()" >tampilkan</button>
+    <button type="button2" onclick="  tampilkanDataAssociative()" >tampilkan</button>
     <div id="tampilanhtml"></div>
     <script>
-        let dataMhs = ["septian",35,"bandung"]
+        let dataMhs = ["septian",35,"bandung"];
+        let dataMhsAll=[['septian',35, 'Bandung'],['farhan',35 ,'Bandung'],['Rizky',35 , '35'],['faiz', 35 , 'Bandung']];
         function tampilkanDataMahasiswa() {
             // console.log(dataMhs)
             var ulElm = document.createElement("ul");
@@ -42,10 +44,31 @@
             </ul>`;
 
             var containerElm = document.getElementById("tampilanhtml");
-            containerElm.innerHTML=appendedElm
+            containerElm.innerHTML=appendedElm;
         }
 
+        function tampilkanDataAssociative(){
+            // dataMhsAll.forEach(element => {
+            //     var appendedElm = `
+            // <ul>
+            //     <li>Nama: ${element[0]} </li>
+            //     <li>Umur: ${element[1]} </li>
+            //     <li>Alamat: ${element[2]}</li>
+            // </ul>`;
+            // });
 
+            var appendElm = dataMhsAll.map(row => `
+            <ul>
+                <li>Nama: ${row[0]} </li>
+                <li>Umur: ${row[1]} </li>
+                <li>Alamat: ${row[2]}</li>
+            </ul>`).join('');
+
+          
+
+            var containerElm = document.getElementById("tampilanhtml");
+            containerElm.innerHTML=appendElm;
+        }
     </script>
     
 </body>
