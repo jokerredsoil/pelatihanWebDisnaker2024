@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan3
+        
+    </title>
+</head>
+<body>
+    <button type="button1" onclick=" tampilkanDataMahasiswa()" >tampilkan</button>
+    <button type="button1" onclick="  tampilkanDataMahasiswa2()" >tampilkan</button>
+    <div id="tampilanhtml"></div>
+    <script>
+        let dataMhs = ["septian",35,"bandung"]
+        function tampilkanDataMahasiswa() {
+            // console.log(dataMhs)
+            var ulElm = document.createElement("ul");
+
+            var liElm1 = document.createElement("li");
+            liElm1.innerHTML = "nama: " + dataMhs[0];
+            var liElm2 = document.createElement("li");
+            liElm2.innerHTML = "umur: " + dataMhs[1];
+            var liElm3 = document.createElement("li");
+            liElm3.innerHTML = "alamat: " + dataMhs[2];
+
+            ulElm.appendChild(liElm1);
+            ulElm.appendChild(liElm2);
+            ulElm.appendChild(liElm3 );
+
+            var containerElm = document.getElementById("tampilanhtml");
+            containerElm.append(liElm1,liElm2,liElm3)
+        }
+
+        function tampilkanDataMahasiswa2() {
+            // console.log(dataMhs)
+            var appendedElm = `
+            <ul>
+                <li>Nama: ${dataMhs[0]} </li>
+                <li>Umur: ${dataMhs[1]} </li>
+                <li>Alamat: ${dataMhs[2]}</li>
+            </ul>`;
+
+            var containerElm = document.getElementById("tampilanhtml");
+            containerElm.innerHTML=appendedElm
+        }
+
+
+    </script>
+    
+</body>
+</html>
