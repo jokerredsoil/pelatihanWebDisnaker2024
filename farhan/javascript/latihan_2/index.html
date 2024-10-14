@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JS</title>
+</head>
+<body>
+    <a href="javascript:void(0)" 
+        onclick="openAlert()"
+        onmouseover="this.style.color='red'"
+        onmouseout="this.style.color='green'"
+        onmousedown="this.text='Jangan Diklik'"
+        onmouseup="this.text='makasih'"
+    >Click Saya</a>
+    <br>
+    <input type="number" id="txtJumlah" placeholder="Masukkan Nilai 1">
+    <input type="number" id="txtJumlah2" placeholder="Masukkan Nilai 2">
+    <button type="button" onclick="kali2()">Kalikan 2</button>
+    <br>
+    <h3 id="hasil"></h3>
+    <script type="text/javascript">
+        function openAlert(){
+            alert('Hello WOrld')
+        }
+
+        function kali2()
+        {
+            var komponenText = document.getElementById('txtJumlah');
+            var komponenText2 = document.getElementById('txtJumlah2');
+            var hasilKali = komponenText.value * komponenText2.value;
+            if(komponenText.value != "" && komponenText2.value != ""){
+                document.getElementById('hasil').innerHTML = "Hasil dari Perkalian dari "+komponenText.value+" x "+komponenText2.value+" adalah = "+hasilKali;
+            }else{
+                document.getElementById('hasil').innerHTML = "Mohon masukkan nilai input 1 dan 2";
+            }
+        }
+    </script>
+</body>
+</html>

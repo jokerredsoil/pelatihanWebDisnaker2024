@@ -55,6 +55,24 @@
             document.write("Masih Remaja")
         }
 
+        document.write("<br/>==============================================================<br/><br/>");
+        function dikalikan(parameter1)
+        {
+            var variable1 = 2;
+
+            return parameter1 * variable1;
+        }
+        document.write("5*2="+dikalikan(5),"<br/>");
+
+        function kaliArray(paramArray)
+        {
+            var returnArray = [];
+            for(i=0;i<paramArray.length;i++){
+                returnArray.push(paramArray[i]*2);
+            }
+            return returnArray;
+        }
+        document.write("Kalikan Array dengan 2*[1,2,3,4,5,6] = "+kaliArray([1,2,3,4,5,6]),"<br/>");
 
 
 
