@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3</title>
+</head>
+<body>
+    <button type="button" onclick="tampilkanData3()">Tampilkan</button>
+    <div id="container"></div>
+    <script>
+        var dataMahasiswa = [
+            ["Farhan Mohaemin S",24,"Bandung"],
+            ["Farhan M S",24,"Bandung"],
+            ["Geni",24,"Bandung"],
+            ["Udin",24,"Bandung"]
+        ]
+        function tampilkanData(){
+            var container = document.getElementById('container');
+            var ulElm = document.createElement('ul');
+
+            var liElm1 = document.createElement('li');
+            liElm1.innerHTML = "Nama : "+dataMahasiswa[0];
+            var liElm2 = document.createElement('li');
+            liElm2.innerHTML = "Usia : "+dataMahasiswa[1];
+            var liElm3 = document.createElement('li');
+            liElm3.innerHTML = "Asal : "+dataMahasiswa[2];
+            ulElm.appendChild(liElm1);
+            ulElm.appendChild(liElm2);
+            ulElm.appendChild(liElm3);
+
+            container.appendChild(ulElm);
+        }
+        function tampilkanData2(){
+            var container = document.getElementById('container');
+            var appendChildElement = `<ul>
+                <li>Nama : ${dataMahasiswa[0]}</li>
+                <li>Usia : ${dataMahasiswa[1]}</li>
+                <li>Asal : ${dataMahasiswa[2]}</li>
+                </ul>`;
+            container.innerHTML = appendChildElement;
+        }
+        function tampilkanData3()
+        {
+            var container = document.getElementById('container');
+            var appendChildElement = dataMahasiswa.map(row =>
+                `<ul>
+                <li>Nama : ${row[0]}</li>
+                <li>Usia : ${row[1]}</li>
+                <li>Asal : ${row[2]}</li>
+                </ul>`
+            ).join('');
+            container.innerHTML = appendChildElement ;
+        }
+    </script>
+</body>
+</html>
