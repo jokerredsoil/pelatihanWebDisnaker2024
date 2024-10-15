@@ -1,0 +1,25 @@
+CREATE TABLE tbl_mahasiswa (
+    id_mahasiswa INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    tanggal_lahir DATE NOT NULL,
+    Jurusan varchar(255) ,
+    alamat TEXT,
+    telepon VARCHAR(15),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tbl_Jurusan (
+	id_jurusan INT AUTO_INCREMENT PRIMARY KEY,
+    nama_jurusan VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
+);
+
+CREATE TABLE mata_kuliah (
+    id_mata_kuliah INT AUTO_INCREMENT PRIMARY KEY,
+    nama_mata_kuliah VARCHAR(100) NOT NULL,
+    sks INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

@@ -1,0 +1,1 @@
+SELECT id_mahasiswa, nama, id_jurusan FROM tbl_mahasiswa;

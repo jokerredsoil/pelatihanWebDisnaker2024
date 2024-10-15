@@ -1,0 +1,16 @@
+INSERT INTO mahasiswa (nama, email, tanggal_lahir, alamat, telepon)
+VALUES 
+('septian n', 'septian.nugraha69@gmail.com', '1985-12-15', '123 Elm Street', '123-456-7890'),
+('Bob Smith', 'bob.smith@example.com', '1999-11-23', '456 Oak Avenue', '234-567-8901');
+
+INSERT INTO mata_kuliah (nama_mata_kuliah, sks)
+VALUES 
+('Database Systems', 3),
+('Web Development', 4),
+('Data Structures', 3);
+
+INSERT INTO jurusan (nama_jurusan)
+VALUES 
+('Computer Science'),
+('Information Technology'),
+('Software Engineering');

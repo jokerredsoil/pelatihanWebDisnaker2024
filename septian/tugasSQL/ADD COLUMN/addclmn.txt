@@ -1,0 +1,3 @@
+ALTER TABLE tbl_mahasiswa
+ADD COLUMN gender VARCHAR(10),
+ADD COLUMN status VARCHAR(20);

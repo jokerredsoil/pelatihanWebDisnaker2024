@@ -1,0 +1,3 @@
+UPDATE tbl_mahasiswa
+SET email = 'bob@dummy.com'
+WHERE id_mahasiswa = 2;

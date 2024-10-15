@@ -1,0 +1,3 @@
+SELECT id_jurusan, COUNT(*) AS jumlah_mahasiswa
+FROM tbl_mahasiswa
+GROUP BY id_jurusan;
