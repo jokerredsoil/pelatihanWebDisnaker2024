@@ -17,7 +17,19 @@
         echo "umur lebih dari 30";
     }
 
-    
+    // ternary
+    // $result = (condition) ? value if true : value if false
+    echo ($umur);
+
+    switch ($umur) {
+        case "20":
+           echo "code";
+            break;
+        
+        default:
+            # code...
+            break;
+    }
 
 
     ?>
