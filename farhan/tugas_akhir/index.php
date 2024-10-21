@@ -16,6 +16,9 @@
         <a href="./">Barang</a>
         <a href="./barang_masuk.php">Log Masuk</a>
         <a href="./barang_keluar.php">Log Keluar</a>
+        <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
+            <a href="./user.php">User Management</a>
+        <?php }?>
         <a href="./aksi/auth/logout.php">Logout</a>
     </div>
     <a href="./form_barang.php">Tambah Data</a>

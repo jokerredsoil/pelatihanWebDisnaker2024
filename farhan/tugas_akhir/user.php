@@ -1,6 +1,6 @@
 <?php 
     require_once "koneksi.php";
-    $res = mysqli_query($koneksi, "SELECT * FROM suplier WHERE deleted_at IS NULL");
+    $res = mysqli_query($koneksi, "SELECT * FROM user WHERE banned = 0");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Data Suplier</h1>
+    <h1>Data User</h1>
     <div>
         <a href="./suplier.php">Suplier</a>
         <a href="./">Barang</a>
@@ -21,7 +21,7 @@
         <?php }?>
         <a href="./aksi/auth/logout.php">Logout</a>
     </div>
-    <a href="./form_suplier.php">Tambah Data</a>
+    <a href="./form_user.php">Tambah Data</a>
     <?php if(isset($_GET['pesan'])){
         echo "<span><strong>".str_replace('-',' ',$_GET['pesan'])."</strong></span>";
     }?>
@@ -30,8 +30,11 @@
             <tr>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Kontak</th>
-                <th>Alamat</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Banned</th>
+                <th>Gabung</th>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                     <th>Aksi</th>
                 <?php }?>
@@ -44,12 +47,15 @@
             ?>
                 <tr>
                     <td><?= $no ?></td>
-                    <td><?= $d['nama'] ?></td>
-                    <td><?= $d['kontak'] ?></td>
-                    <td><?= $d['alamat'] ?></td>
+                    <td><?= $d['name'] ?></td>
+                    <td><?= $d['username'] ?></td>
+                    <td><?= $d['email'] ?></td>
+                    <td><?= $d['role'] ?></td>
+                    <td><?= $d['banned'] != 1 ? 'Aktif' : 'Tidak Aktif' ?></td>
+                    <td><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                         <td>
-                            <a href="./edit_suplier.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_suplier.php?id=<?=$d['id']?>">Hapus</a>
+                            <a href="./edit_user.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/banned_user.php?id=<?=$d['id']?>">Hapus</a>
                         </td>
                     <?php }?>
                 </tr>
