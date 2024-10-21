@@ -1,6 +1,6 @@
 <?php 
     require_once "koneksi.php";
-    $res = mysqli_query($koneksi, "SELECT b.*, s.nama AS nama_suplier FROM barang AS b LEFT JOIN suplier AS s ON b.suplier_id = s.id");
+    $res = mysqli_query($koneksi, "SELECT b.*, s.nama AS nama_suplier FROM barang AS b LEFT JOIN suplier AS s ON b.suplier_id = s.id AND s.deleted_at IS NULL WHERE b.deleted_at IS NULL");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,11 @@
         <a href="<?= $_SERVER['REQUEST_URI'] ?>keluar.php">Log Keluar</a>
     </div>
     <a href="<?= $_SERVER['REQUEST_URI'] ?>form_barang.php">Tambah Data</a>
+    <?php if(isset($_SESSION['success'])){
+        echo "<span><strong>".$_SESSION['success']."</strong></span>";
+    }elseif(isset($_SESSION['error'])){
+        echo "<span><strong>".$_SESSION['error']."</strong></span>";
+    } ?>
     <table border=1>
         <thead>
             <tr>
@@ -43,7 +48,7 @@
                     <td><?= $d['satuan'] ?></td>
                     <td><?= $d['stock'] ?></td>
                     <td>
-                        <a href="<?= $_SERVER['REQUEST_URI'] ?>edit.php?id=<?=$d['id']?>">Edit</a>|<a href="<?= $_SERVER['REQUEST_URI'] ?>hapus.php?id=<?=$d['id']?>">Hapus</a>
+                        <a href="edit_barang.php?id=<?=$d['id']?>">Edit</a>|<a href="aksi/hapus_barang.php?id=<?=$d['id']?>">Hapus</a>
                     </td>
                 </tr>
             <?php
