@@ -1,0 +1,2 @@
+ALTER TABLE mata_kuliah
+RENAME TO tbl_mata_kuliah;

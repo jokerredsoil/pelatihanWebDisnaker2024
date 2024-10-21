@@ -1,3 +1,10 @@
+<?php
+require 'functions.php';
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +15,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="../styles.css" /> -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   </head>
   <body>
     <header>
@@ -30,10 +37,10 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="../index.html">Biodata</a>
+                <a class="nav-link" href="#">Biodata</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../gallery.html">Gallery</a>
+                <a class="nav-link" href="gallery.html">Gallery</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -45,14 +52,8 @@
                   >My Blog</a
                 >
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a href="index.html" class="dropdown-item"
-                      >Daftar Artikel</a
-                    >
-                  </li>
-                  <li>
-                    <a href="form.html" class="dropdown-item">Buat Artikel</a>
-                  </li>
+                  <li><a href="./article/index.html" class="dropdown-item">Daftar Artikel</a></li>
+                  <li><a href="./article/form.html" class="dropdown-item">Buat Artikel</a></li>
                 </ul>
               </li>
             </ul>
@@ -61,31 +62,9 @@
       </nav>
     </header>
 
-    <main class="my-4">
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-100 ">
-            <img
-              src="../assets/image/gorilaganteng.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text ">
-                  
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
-
-            </div>
-          </div>
-        </div>
-        </div>
+    <main>
+        
+        
     </main>
 
     <footer class="my-footer">

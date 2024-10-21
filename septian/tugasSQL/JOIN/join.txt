@@ -1,0 +1,3 @@
+SELECT mahasiswa.nama, jurusan.nama_jurusan
+FROM tbl_mahasiswa AS mahasiswa
+INNER JOIN tbl_jurusan AS jurusan ON mahasiswa.id_jurusan = jurusan.id_jurusan;

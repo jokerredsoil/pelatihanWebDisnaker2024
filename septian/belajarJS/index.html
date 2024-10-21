@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JS</title>
+</head>
+<body>
+    <!-- standar penulisan ID menggunakan camelcase
+        standar penulisan kelas menggunakan strip apabila 2 kata
+        '' ini untuk char
+        "" untuk string 
+    -->
+    <p id="test"></p>
+
+    <p id="sapaSaya"></p>
+
+
+    <script type="text/javascript">
+        // document.getElementById('test').innerHTML = "Hallo semua";
+        // document.write('<h3>Hallo juga</h3>');
+
+        // var myName = prompt("sebut nama saya");
+
+        // if(myName != null){
+        //     // console.log(myName);
+        //     document.getElementById('sapaSaya').innerHTML = "hallo, " + myName;
+        // }else if(myName === " "){
+        //     console.log("kenalan dlu ");
+
+        // }else{
+        //     console.log("kenalan dlu");
+
+        // }
+
+        document.write("5x5 =", 5 * 5 , "</br>");
+        document.write("5x5 =", 5 + 5 , "</br>");
+        document.write("5x5 =", 5 - 5 , "</br>");
+        document.write("5x5 =", 5 / 5 , "</br>");
+        document.write("5x5 =", 5 % 5 , "</br>");
+        var uang  = 12000.45;
+        document.write("uang saya = ", (uang / 3 ).toFixed(2), "</br>");
+        document.write("uang saya = ", ++uang, "</br>");
+        document.write("uang saya = ", --uang, "</br>");
+        document.write("uang saya = ", Math.ceil(uang), "</br>");
+        document.write("uang saya = ", Math.floor(uang), "</br>");
+        document.write("uang saya = ", Math.round(uang), "</br>");
+        
+        var stringPanjang = "ini adalah string yang sangat panjang";
+        document.write(stringPanjang.length);
+
+        document.write(stringPanjang.indexOf("Sangat"),"</br>" );
+        document.write(stringPanjang.slice(4,10),"</br>");
+        document.write(stringPanjang.substring(4,1),"</br>");
+        document.write(stringPanjang.replace("panjang sekali","pendek sekali"), "</br>");
+        document.write(stringPanjang.split());
+        document.write(stringPanjang.split(" "),"</br>");
+        var arrString = stringPanjang.split(" ")
+        document.write(arrString[3].toUpperCase(), "</br>");
+        document.write(arrString[3].toLowerCase(), "</br> </br> </br>");
+
+        var strStyle = "Gorila Ganteng"
+        document.write(strStyle);
+        document.write(strStyle.bold());
+        document.write(strStyle.italics());
+        document.write(strStyle.strike());
+        document.write(strStyle.fontsize(12));
+        document.write(strStyle.sub());
+        document.write(strStyle.sup());
+
+        if (umur >= 5 && umur < 6) {
+            document.write("pergi ke tk")
+        }else if(umur > 15) {
+            document.write("pergi ke sekolah")
+        }else{
+            document.write("Masih Remaja")
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

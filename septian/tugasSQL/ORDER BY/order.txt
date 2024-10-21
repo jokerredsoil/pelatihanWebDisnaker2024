@@ -1,0 +1,2 @@
+SELECT * FROM tbl_mahasiswa
+ORDER BY nama ASC;  
