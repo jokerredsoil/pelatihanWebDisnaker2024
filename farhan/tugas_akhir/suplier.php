@@ -16,6 +16,7 @@
         <a href="./">Barang</a>
         <a href="./barang_masuk.php">Log Masuk</a>
         <a href="./barang_keluar.php">Log Keluar</a>
+        <a href="./aksi/auth/logout.php">Logout</a>
     </div>
     <a href="./form_suplier.php">Tambah Data</a>
     <?php if(isset($_GET['pesan'])){
@@ -28,7 +29,9 @@
                 <th>Nama</th>
                 <th>Kontak</th>
                 <th>Alamat</th>
-                <th>Aksi</th>
+                <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
+                    <th>Aksi</th>
+                <?php }?>
             </tr>
         </thead>
         <tbody>
@@ -41,9 +44,11 @@
                     <td><?= $d['nama'] ?></td>
                     <td><?= $d['kontak'] ?></td>
                     <td><?= $d['alamat'] ?></td>
-                    <td>
-                        <a href="./edit_suplier.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_suplier.php?id=<?=$d['id']?>">Hapus</a>
-                    </td>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
+                        <td>
+                            <a href="./edit_suplier.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_suplier.php?id=<?=$d['id']?>">Hapus</a>
+                        </td>
+                    <?php }?>
                 </tr>
             <?php
                     $no++;

@@ -16,6 +16,7 @@
         <a href="./">Barang</a>
         <a href="./barang_masuk.php">Log Masuk</a>
         <a href="./barang_keluar.php">Log Keluar</a>
+        <a href="./aksi/auth/logout.php">Logout</a>
     </div>
     <a href="./form_barang_keluar.php">Tambah Data</a>
     <?php if(isset($_GET['pesan'])){
@@ -29,7 +30,9 @@
                 <th>Pengambil</th>
                 <th>Stock</th>
                 <th>Tanggal Masuk</th>
-                <th>Aksi</th>
+                <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
+                    <th>Aksi</th>
+                <?php }?>
             </tr>
         </thead>
         <tbody>
@@ -43,9 +46,11 @@
                     <td><?= $d['pengambil'] ?></td>
                     <td><?= $d['stock'] ?></td>
                     <td><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
-                    <td>
-                        <a href="./edit_barang_keluar.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_barang_keluar.php?id=<?=$d['id']?>">Hapus</a>
-                    </td>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
+                        <td>
+                            <a href="./edit_barang_keluar.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_barang_keluar.php?id=<?=$d['id']?>">Hapus</a>
+                        </td>
+                    <?php }?>
                 </tr>
             <?php
                     $no++;

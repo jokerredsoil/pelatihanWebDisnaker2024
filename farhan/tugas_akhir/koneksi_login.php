@@ -11,7 +11,3 @@ if(mysqli_connect_errno()){
     echo "Failed to connect databse : ".mysqli_connect_error();
     exit();
 }
-
-if(!isset($_SESSION['login'])){
-    header("Location: ./login.php?pesan=Anda-Harus-Login-Terlebih-Dahulu");
-}
