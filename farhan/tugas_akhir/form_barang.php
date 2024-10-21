@@ -40,7 +40,7 @@
         </div>
         <div>
             <label for="stock">Stock</label>
-            <input type="text" name="stock" id="stock" placeholder="Masukkan Stock Barang">
+            <input type="number" name="stock" id="stock" placeholder="Masukkan Stock Barang">
         </div>
         <button type="submit">Simpan</button>
     </form>

@@ -44,7 +44,7 @@
         </div>
         <div>
             <label for="stock">Stock</label>
-            <input type="text" name="stock" id="stock" value="<?=$data_old['stock']?>" placeholder="Masukkan Stock Barang">
+            <input type="text" name="number" id="stock" value="<?=$data_old['stock']?>" placeholder="Masukkan Stock Barang">
         </div>
         <button type="submit">Simpan</button>
     </form>
