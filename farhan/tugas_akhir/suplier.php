@@ -14,8 +14,8 @@
     <div>
         <a href="./suplier.php">Suplier</a>
         <a href="./">Barang</a>
-        <a href="./masuk.php">Log Masuk</a>
-        <a href="./keluar.php">Log Keluar</a>
+        <a href="./barang_masuk.php">Log Masuk</a>
+        <a href="./barang_keluar.php">Log Keluar</a>
     </div>
     <a href="./form_suplier.php">Tambah Data</a>
     <?php if(isset($_SESSION['success'])){
@@ -44,7 +44,7 @@
                     <td><?= $d['kontak'] ?></td>
                     <td><?= $d['alamat'] ?></td>
                     <td>
-                        <a href="edit_suplier.php?id=<?=$d['id']?>">Edit</a>|<a href="aksi/hapus_suplier.php?id=<?=$d['id']?>">Hapus</a>
+                        <a href="./edit_suplier.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_suplier.php?id=<?=$d['id']?>">Hapus</a>
                     </td>
                 </tr>
             <?php

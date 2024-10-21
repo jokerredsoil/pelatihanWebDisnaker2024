@@ -12,12 +12,12 @@
 <body>
     <h1>Data Barang</h1>
     <div>
-        <a href="<?= $_SERVER['REQUEST_URI'] ?>suplier.php">Suplier</a>
-        <a href="<?= $_SERVER['REQUEST_URI'] ?>">Barang</a>
-        <a href="<?= $_SERVER['REQUEST_URI'] ?>masuk.php">Log Masuk</a>
-        <a href="<?= $_SERVER['REQUEST_URI'] ?>keluar.php">Log Keluar</a>
+        <a href="./suplier.php">Suplier</a>
+        <a href="./">Barang</a>
+        <a href="./barang_masuk.php">Log Masuk</a>
+        <a href="./barang_keluar.php">Log Keluar</a>
     </div>
-    <a href="<?= $_SERVER['REQUEST_URI'] ?>form_barang.php">Tambah Data</a>
+    <a href="./form_barang.php">Tambah Data</a>
     <?php if(isset($_SESSION['success'])){
         echo "<span><strong>".$_SESSION['success']."</strong></span>";
     }elseif(isset($_SESSION['error'])){
@@ -48,7 +48,7 @@
                     <td><?= $d['satuan'] ?></td>
                     <td><?= $d['stock'] ?></td>
                     <td>
-                        <a href="edit_barang.php?id=<?=$d['id']?>">Edit</a>|<a href="aksi/hapus_barang.php?id=<?=$d['id']?>">Hapus</a>
+                        <a href="./edit_barang.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_barang.php?id=<?=$d['id']?>">Hapus</a>
                     </td>
                 </tr>
             <?php
