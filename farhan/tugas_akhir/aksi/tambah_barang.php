@@ -12,11 +12,9 @@ $sql = "INSERT INTO `barang`(`id`, `suplier_id`, `nama`, `deskripsi`, `satuan`, 
 $res = mysqli_query($koneksi, $sql);
 
 if($res){
-    $_SESSION['success'] = "Berhasil Menambahkan Data Barang";
-    header("Location: ../");
+    header("Location: ../?pesan=Berhasil-Menambahkan-Barang");
     exit();
 }else{
-    $_SESSION['error'] = "Gagal Menambahkan Data Barang";
-    header("Location: ../");
+    header("Location: ../?pesan=Gagal-Menambahkan-Data Barang");
     exit();
 }

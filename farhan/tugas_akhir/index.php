@@ -18,11 +18,9 @@
         <a href="./barang_keluar.php">Log Keluar</a>
     </div>
     <a href="./form_barang.php">Tambah Data</a>
-    <?php if(isset($_SESSION['success'])){
-        echo "<span><strong>".$_SESSION['success']."</strong></span>";
-    }elseif(isset($_SESSION['error'])){
-        echo "<span><strong>".$_SESSION['error']."</strong></span>";
-    } ?>
+    <?php if(isset($_GET['pesan'])){
+        echo "<span><strong>".str_replace('-',' ',$_GET['pesan'])."</strong></span>";
+    }?>
     <table border=1>
         <thead>
             <tr>

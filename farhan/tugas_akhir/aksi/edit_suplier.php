@@ -11,11 +11,9 @@ $sql = "UPDATE `suplier` SET `nama`='$nama',`kontak`='$kontak',`alamat`='$alamat
 $res = mysqli_query($koneksi, $sql);
 
 if($res){
-    $_SESSION['success'] = "Berhasil Merubah Data Suplier";
-    header("Location: ../suplier.php");
+    header("Location: ../suplier.php?pesan=Berhasil-Merubah-Suplier");
     exit();
 }else{
-    $_SESSION['error'] = "Gagal Merubah Data Suplier";
-    header("Location: ../suplier.php");
+    header("Location: ../suplier.php?pesan=Gagal-Merubah-Data Suplier");
     exit();
 }

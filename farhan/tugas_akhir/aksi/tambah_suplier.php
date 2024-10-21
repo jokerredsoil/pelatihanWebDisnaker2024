@@ -10,11 +10,9 @@ $sql = "INSERT INTO `suplier`(`id`, `nama`, `kontak`, `alamat`) VALUES (null, '$
 $res = mysqli_query($koneksi, $sql);
 
 if($res){
-    $_SESSION['success'] = "Berhasil Menambahkan Data Suplier";
-    header("Location: ../suplier.php");
+    header("Location: ../suplier.php?pesan=Berhasil-Menambahkan-Suplier");
     exit();
 }else{
-    $_SESSION['error'] = "Gagal Menambahkan Data Suplier";
-    header("Location: ../suplier.php");
+    header("Location: ../suplier.php?pesan=Gagal-Menambahkan-Data Suplier");
     exit();
 }
