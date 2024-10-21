@@ -8,7 +8,8 @@ $conn = mysqli_connect($host,$user,$passw,$db);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}else{
+}
+else{
     echo "<script type='text/javascript'>alert('DB succesfully connected');</script>";
 }
 
@@ -26,8 +27,8 @@ function myquery($query){
 
     $list = [];
 
-    while ($datas = mysqli_fetch_assoc($result)) {
-       $list[] = $datas;
+    while ($data = mysqli_fetch_assoc($result)) {
+       $list[] = $data;
 
      }
     return $list;

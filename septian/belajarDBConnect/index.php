@@ -1,7 +1,11 @@
 <?php
 require 'connection.php';
-$data = myquery("SELECT * FROM tb_person ");
+$data = myquery("SELECT p.id, p.nama, p.ktp, p.tgl_daftar, a.alamat
+FROM tb_person as p
+JOIN tb_alamat as a
+ON p.alamat = a.id");
 
+// var_dump($data);
 
 ?>
 
@@ -20,13 +24,23 @@ $data = myquery("SELECT * FROM tb_person ");
         <div class="row">
             <div class="col-sm-12">
                 <h3>Data RW Bajuri</h3>
+                <a href="form_tambah.php">tambah data</a>
+                <?php if (isset($_GET['messages'])): ?>
+                                <p color= "red">
+                                    <?= $_GET['messages'];?>
+                                </p>
+
+                <?php endif; ?>
 
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">aksi</th>
+                      
                         <th scope="col">nama</th>
                         <th scope="col">KTP</th>
+                        <th scope="col">alamat</th>
+                        <th scope="col">tgl daftar</th>
+                        <th scope="col">aksi</th>
                     
                     </tr>
                     </thead>
@@ -36,10 +50,18 @@ $data = myquery("SELECT * FROM tb_person ");
                         
                         <td><?=$row['nama']?></td>
                         <td><?=$row['ktp']?></td>
+                        <td><?=$row['alamat']?></td>
+                        <td><?=$row['tgl_daftar']?></td>
+              
                         
+
                         <td scope="row">
-                            <a href="#" class="btn btn-primary">edit</a>
-                            <a href="#" class="btn btn-outline-danger">delete</a>
+                            
+                           
+                        <a href="form_edit.php?id=<?=
+                        $row['id']?>" class="btn btn-primary">Edit</a>
+                        <a href="function.php?action=delete&id=<?= $row['id'] ?>" class="btn btn-outline-danger" onClick="return confirm('Yakin akan menghapus?')">Hapus</a>
+
                         </td>
                     </tr>
                     <?php endforeach; ?>
