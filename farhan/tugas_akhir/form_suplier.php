@@ -18,7 +18,7 @@
         <div class="card-header">
             <h4>Tambah Suplier</h4>
         </div>
-        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post">
+        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post" id="form-suplier">
             <?php if(isset($data_old)) {?>
                 <input type="hidden" name="suplier" value="<?=$id?>">
             <?php }?>

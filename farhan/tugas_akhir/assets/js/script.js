@@ -2,6 +2,7 @@ $(document).ready(function(){
     'use strict'
     const tableElement = document.querySelector('.table-datatables');
     const formBarang = document.querySelector('#form-barang');
+    const formSuplier = document.querySelector('#form-suplier');
 
     if(tableElement){
         $(tableElement).DataTable();
@@ -40,6 +41,44 @@ $(document).ready(function(){
                 },
                 stock:{
                     required:'Stock harus diisi',
+                },
+            },
+            errorClass: 'invalid-feedback',
+            errorElement: 'div',
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-valid').removeClass('is-invalid');
+            },
+            submitHandler: function(form) {
+                form.submit(); // Kirim form jika valid
+            }
+        })
+    }
+
+    if(formSuplier){
+        $(formSuplier).validate({
+            rules:{
+                nama:{
+                    required:true,
+                },
+                kontak:{
+                    required:true,
+                },
+                alamat:{
+                    required:true,
+                },
+            },
+            messages:{
+                nama:{
+                    required:'Nama Suplier harus diisi',
+                },
+                kontak:{
+                    required:'Kontak Suplier harus diisi',
+                },
+                alamat:{
+                    required:'Alamat Suplier harus diisi',
                 },
             },
             errorClass: 'invalid-feedback',
