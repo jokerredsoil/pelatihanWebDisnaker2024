@@ -1,40 +1,59 @@
 <?php 
-    require_once "koneksi.php";
+    require "koneksi.php";
+    include "shared/header.php";
+    include "shared/side.php";
+    $link = './aksi/tambah_barang_masuk.php';
     $res = mysqli_query($koneksi, "SELECT * FROM barang WHERE deleted_at IS NULL");
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $res_barang_masuk = mysqli_query($koneksi,"SELECT * FROM barang_masuk WHERE id = $id");
+        $data_old = mysqli_fetch_array($res_barang_masuk);
+        $link = './aksi/edit_barang_masuk.php';
+    }    
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Barang Masuk</title>
-</head>
-<body>
-    <h1>Tambah Barang Masuk</h1>
-    <a href="./">Kembali</a>
-    <form action="./aksi/tambah_barang_masuk.php" method="post">
-        <div>
-            <label for="barang">Barang</label>
-            <select name="barang_id" id="barang">
-                <option value="">Pilih Barang</option>
-                <?php 
-                    while ($data = mysqli_fetch_array($res)) {
-                        ?>
-                            <option value="<?=$data['id']?>"><?= $data['nama'] ?></option>
-                        <?php
-                    }
-                ?>
-            </select>
+<div class="col-sm-12 col-md-9">
+    <div class="card">
+        <div class="card-header">
+            <h4>Tambah Barang Masuk</h4>
         </div>
-        <div>
-            <label for="penerima">Penerima</label>
-            <input type="text" name="penerima" id="penerima" placeholder="Masukkan Penerima Barang">
-        </div>
-        <div>
-            <label for="stock">Stock</label>
-            <input type="number" name="stock" id="stock" placeholder="Masukkan Stock Barang">
-        </div>
-        <button type="submit">Simpan</button>
-    </form>
-</body>
-</html>
+        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post">
+            <?php if(isset($data_old)) {?>
+                <input type="hidden" name="barang" value="<?=$id?>">
+            <?php }?>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label" for="barang">Barang</label>
+                            <select class="form-select" name="barang_id" id="barang">
+                                <option value="">Pilih Barang</option>
+                                <?php 
+                                    while ($data = mysqli_fetch_array($res)) {
+                                        ?>
+                                            <option value="<?=$data['id']?>" <?= (isset($data_old) && $data_old['barang_id'] == $data['id']) ? 'selected' : '' ?>><?= $data['nama'] ?></option>
+                                        <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="penerima">Penerima</label>
+                            <input class="form-control" type="text" name="penerima" id="penerima" value="<?= isset($data_old) ? $data_old['penerima'] : '' ?>" placeholder="Masukkan Penerima Barang">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="stock">Stock</label>
+                            <input class="form-control" type="number" name="stock" id="stock" value="<?= isset($data_old) ? $data_old['stock'] : '' ?>" placeholder="Masukkan Stock Barang">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-end gap-3">
+                <a href="./barang_masuk.php" class="btn btn-danger">Kembali</a>
+                <button type="submit" class="btn btn-success">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
+<?php 
+    include "shared/footer.php"
+?>
