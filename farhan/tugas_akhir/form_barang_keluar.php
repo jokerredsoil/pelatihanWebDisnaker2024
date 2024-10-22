@@ -19,7 +19,7 @@
         <div class="card-header">
             <h4>Tambah Barang Keluar</h4>
         </div>
-        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post">
+        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post" id="form-barang-keluar">
             <?php if(isset($data_old)) {?>
                 <input type="hidden" name="barang" value="<?=$id?>">
             <?php }?>

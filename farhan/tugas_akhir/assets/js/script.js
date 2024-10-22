@@ -4,6 +4,7 @@ $(document).ready(function(){
     const formBarang = document.querySelector('#form-barang');
     const formSuplier = document.querySelector('#form-suplier');
     const formBarangMasuk = document.querySelector('#form-barang-masuk');
+    const formBarangKeluar = document.querySelector('#form-barang-keluar');
 
     if(tableElement){
         $(tableElement).DataTable();
@@ -115,6 +116,44 @@ $(document).ready(function(){
                 },
                 penerima:{
                     required:'Penerima harus diisi',
+                },
+                stock:{
+                    required:'Stock harus diisi',
+                },
+            },
+            errorClass: 'invalid-feedback',
+            errorElement: 'div',
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-valid').removeClass('is-invalid');
+            },
+            submitHandler: function(form) {
+                form.submit(); // Kirim form jika valid
+            }
+        })
+    }
+
+    if(formBarangKeluar){
+        $(formBarangKeluar).validate({
+            rules:{
+                barang_id:{
+                    required:true,
+                },
+                pengambil:{
+                    required:true,
+                },
+                stock:{
+                    required:true,
+                },
+            },
+            messages:{
+                barang_id:{
+                    required:'Barang harus dipilih',
+                },
+                pengambil:{
+                    required:'Pengambil harus diisi',
                 },
                 stock:{
                     required:'Stock harus diisi',
