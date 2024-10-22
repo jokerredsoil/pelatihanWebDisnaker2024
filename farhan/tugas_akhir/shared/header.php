@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/libs/jquery/css/jquery-ui.min.css">
-
+    <link rel="stylesheet" href="assets/libs/DataTables/datatables.min.css">
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
 </head>

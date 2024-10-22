@@ -9,5 +9,9 @@
     </footer>
     <!-- Load Bootstrap -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Load DataTables -->
+     <script src="assets/libs/DataTables/datatables.min.js"></script>
+     <!-- Load Custom JS -->
+      <script src="assets/js/script.js"></script>
 </body>
 </html>
