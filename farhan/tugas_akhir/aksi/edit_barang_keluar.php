@@ -1,6 +1,10 @@
 <?php
 require_once "../koneksi.php";
 
+if(isset($_SESSION['role']) && $_SESSION['role'] != 'Admin'){
+    die('Akses Dibatasi');
+}
+
 $id = $_POST['barang'];
 $barang_id = $_POST['barang_id'];
 $pengambil = $_POST['pengambil'];

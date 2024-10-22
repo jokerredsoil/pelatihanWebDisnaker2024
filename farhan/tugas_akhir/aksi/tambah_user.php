@@ -1,6 +1,10 @@
 <?php 
 require_once "../koneksi.php";
 
+if(isset($_SESSION['role']) && $_SESSION['role'] != 'Admin'){
+    die('Akses Dibatasi');
+}
+
 $nama = strip_tags($_POST['nama']);
 $username = strip_tags($_POST['username']);
 $email = strip_tags($_POST['email']);
