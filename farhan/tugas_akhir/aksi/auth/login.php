@@ -10,6 +10,7 @@ if(!is_null($user)){
     if(password_verify($password,$user['password'])){
         $_SESSION['login'] = true;
         $_SESSION['role'] = $user['role'];
+        $_SESSION['username'] = $user['username'];
         header('Location: ../../?pesan=Berhasil-Login');
     }else{
         header('Location: ../../login.php?pesan=Password-Tidak-Sama');
