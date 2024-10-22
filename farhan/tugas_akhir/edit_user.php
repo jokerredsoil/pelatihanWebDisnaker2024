@@ -9,12 +9,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah User</title>
+    <title>Edit User</title>
 </head>
 <body>
-    <h1>Tambah User</h1>
+    <h1>Edit User</h1>
     <a href="./">Kembali</a>
-    <form action="./aksi/tambah_user.php" method="post">
+    <form action="./aksi/edit_user.php" method="post">
+        <input type="hidden" name="user" value="<?=$id?>">
         <div>
             <label for="nama">Nama</label>
             <input type="text" name="nama" id="nama" value="<?=$data['name']?>" placeholder="Masukkan Nama">
