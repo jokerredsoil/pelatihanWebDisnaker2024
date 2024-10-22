@@ -10,6 +10,13 @@
             <h4>Daftar Barang</h4>
         </div>
         <div class="card-body">
+            <?php if(isset($_GET['pesan'])){
+                ?>
+                    <div class="alert alert-light" role="alert">
+                        <?= str_replace('-',' ',$_GET['pesan']) ?>
+                    </div>
+                <?php
+            } ?>
             <div class="table-responsive">
                 <table class="table table-bordered table-datatables">
                     <thead>
@@ -40,7 +47,7 @@
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
-                                            <a href="./edit_barang.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
+                                            <a href="./form_barang.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
                                             <a href="./aksi/hapus_barang.php?id=<?=$d['id']?>" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </td>
