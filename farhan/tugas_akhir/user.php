@@ -1,6 +1,6 @@
 <?php 
     require_once "koneksi.php";
-    $res = mysqli_query($koneksi, "SELECT * FROM user WHERE banned = 0");
+    $res = mysqli_query($koneksi, "SELECT * FROM user");
 ?>
 <!DOCTYPE html>
 <html lang="en">
