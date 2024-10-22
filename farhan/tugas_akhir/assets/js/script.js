@@ -5,6 +5,7 @@ $(document).ready(function(){
     const formSuplier = document.querySelector('#form-suplier');
     const formBarangMasuk = document.querySelector('#form-barang-masuk');
     const formBarangKeluar = document.querySelector('#form-barang-keluar');
+    const formUser = document.querySelector('#form-user');
 
     if(tableElement){
         $(tableElement).DataTable();
@@ -157,6 +158,56 @@ $(document).ready(function(){
                 },
                 stock:{
                     required:'Stock harus diisi',
+                },
+            },
+            errorClass: 'invalid-feedback',
+            errorElement: 'div',
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-valid').removeClass('is-invalid');
+            },
+            submitHandler: function(form) {
+                form.submit(); // Kirim form jika valid
+            }
+        })
+    }
+
+    if(formUser){
+        $(formUser).validate({
+            rules:{
+                nama:{
+                    required:true,
+                },
+                username:{
+                    required:true,
+                },
+                email:{
+                    required:true,
+                },
+                password:{
+                    required:true,
+                },
+                role:{
+                    required:true,
+                },
+            },
+            messages:{
+                nama:{
+                    required:'Nama harus diisi',
+                },
+                username:{
+                    required:'Username harus diisi',
+                },
+                email:{
+                    required:'Email harus diisi',
+                },
+                password:{
+                    required:'Password harus diisi',
+                },
+                role:{
+                    required:'Role harus diisi',
                 },
             },
             errorClass: 'invalid-feedback',
