@@ -1,5 +1,8 @@
 <?php 
     require "koneksi.php";
+    if(isset($_SESSION['role']) && $_SESSION['role'] != 'Admin'){
+        die('Akses Dibatasi');
+    }
     $active = "user";
     include "shared/header.php";
     include "shared/side.php";
