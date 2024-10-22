@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/libs/DataTables/datatables.min.css">
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/libs/jquery_validate/jquery.validate.min.js"></script>
 
     <!-- Custom CSS -->
      <link rel="stylesheet" href="assets/css/style.css">
