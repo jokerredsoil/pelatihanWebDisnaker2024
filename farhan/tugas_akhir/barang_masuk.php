@@ -33,9 +33,7 @@
                 <th>Penerima</th>
                 <th>Stock</th>
                 <th>Tanggal Masuk</th>
-                <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
-                    <th>Aksi</th>
-                <?php }?>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -49,11 +47,9 @@
                     <td><?= $d['penerima'] ?></td>
                     <td><?= $d['stock'] ?></td>
                     <td><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
-                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
-                        <td>
-                            <a href="./edit_barang_masuk.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_barang_masuk.php?id=<?=$d['id']?>">Hapus</a>
-                        </td>
-                    <?php }?>
+                    <td>
+                        <a href="./edit_barang_masuk.php?id=<?=$d['id']?>">Edit</a>|<a href="./aksi/hapus_barang_masuk.php?id=<?=$d['id']?>">Hapus</a>
+                    </td>
                 </tr>
             <?php
                     $no++;
