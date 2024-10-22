@@ -1,5 +1,6 @@
 <?php 
     require "koneksi.php";
+    $active = "user";
     include "shared/header.php";
     include "shared/side.php";
     $res = mysqli_query($koneksi, "SELECT * FROM user");

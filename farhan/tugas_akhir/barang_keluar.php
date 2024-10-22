@@ -1,5 +1,6 @@
 <?php 
     require "koneksi.php";
+    $active = "barang_keluar";
     include "shared/header.php";
     include "shared/side.php";
     $res = mysqli_query($koneksi, "SELECT bm.*, b.nama AS nama_barang FROM barang_keluar AS bm LEFT JOIN barang AS b ON bm.barang_id = b.id AND b.deleted_at IS NULL WHERE bm.deleted_at IS NULL");

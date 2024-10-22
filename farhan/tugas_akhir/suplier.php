@@ -1,5 +1,6 @@
 <?php 
     require "koneksi.php";
+    $active = "suplier";
     include "shared/header.php";
     include "shared/side.php";
     $res = mysqli_query($koneksi, "SELECT * FROM suplier WHERE deleted_at IS NULL");
