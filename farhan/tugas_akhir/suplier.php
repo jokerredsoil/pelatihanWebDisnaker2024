@@ -8,7 +8,7 @@
 <div class="col-sm-12 col-md-9">
     <div class="card">
         <div class="card-header">
-            <h4>Daftar Barang</h4>
+            <h4>Daftar Suplier</h4>
         </div>
         <div class="card-body">
             <?php if(isset($_GET['pesan'])){
