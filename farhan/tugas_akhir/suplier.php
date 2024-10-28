@@ -39,7 +39,7 @@
                             <tr>
                                 <td class="text-center"><?= $no ?></td>
                                 <td><?= $d['nama'] ?></td>
-                                <td><?= $d['kontak'] ?></td>
+                                <td class="text-center"><?= $d['kontak'] ?></td>
                                 <td><?= $d['alamat'] ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>

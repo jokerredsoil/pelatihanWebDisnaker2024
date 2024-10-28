@@ -41,8 +41,8 @@
                                 <td class="text-center"><?= $no ?></td>
                                 <td><?= $d['nama_barang'] ?></td>
                                 <td><?= $d['pengambil'] ?></td>
-                                <td><?= $d['stock'] ?></td>
-                                <td><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
+                                <td class="text-center"><?= $d['stock'] ?></td>
+                                <td class="text-center"><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">

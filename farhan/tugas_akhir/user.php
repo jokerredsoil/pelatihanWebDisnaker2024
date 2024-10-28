@@ -47,14 +47,14 @@
                                 <td><?= $d['name'] ?></td>
                                 <td><?= $d['username'] ?></td>
                                 <td><?= $d['email'] ?></td>
-                                <td><?= $d['role'] ?></td>
-                                <td><?= $d['banned'] != 1 ? 'Aktif' : 'Tidak Aktif' ?></td>
-                                <td><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
+                                <td class="text-center"><?= $d['role'] ?></td>
+                                <td class="text-center"><?= $d['banned'] != 1 ? 'Aktif' : 'Tidak Aktif' ?></td>
+                                <td class="text-center"><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
                                             <a href="./form_user.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
-                                            <a href="./aksi/banned_user.php?id=<?=$d['id']?>" class="btn btn-danger">Hapus</a>
+                                            <a href="./aksi/banned_user.php?id=<?=$d['id']?>" class="btn btn-danger">Banned</a>
                                         </div>
                                     </td>
                                 <?php }?>
