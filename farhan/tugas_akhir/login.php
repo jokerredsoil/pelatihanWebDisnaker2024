@@ -12,7 +12,7 @@
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
     <script src="assets/libs/jquery_validate/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
+    <script src="assets/libs/jquery_validate/additional-methods.min.js"></script>
 </head>
 <body class="bg-dark">
     <div class="container-fluid vh-100">
@@ -31,14 +31,14 @@
                         <form action="./aksi/auth/login.php" class="row g-3 needs-validation" novalidate method="post" id="login">
                             <div class="col">
                                 <div class="mb-3 row align-items-center">
-                                    <label for="username" class="form-label col-md-2">Username</label>
-                                    <div class="col-md-10">
+                                    <label for="username" class="form-label col-12">Username</label>
+                                    <div class="col-12">
                                         <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
                                     </div>
                                 </div>
                                 <div class="mb-3 row align-items-center">
-                                    <label for="password" class="form-label col-md-2">Password</label>
-                                    <div class="col-md-10">
+                                    <label for="password" class="form-label col-12">Password</label>
+                                    <div class="col-12">
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
                                     </div>
                                 </div>

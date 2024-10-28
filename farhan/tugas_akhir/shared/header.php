@@ -12,10 +12,10 @@
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
     <script src="assets/libs/jquery_validate/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
+    <script src="assets/libs/jquery_validate/additional-methods.min.js"></script>
 
     <!-- Custom CSS -->
-     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="d-flex flex-column min-vh-100 bg-dark">
     <?php include "shared/nav.php"; ?>
