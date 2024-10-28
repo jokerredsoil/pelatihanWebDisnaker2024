@@ -11,6 +11,8 @@
 
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/libs/jquery_validate/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
 </head>
 <body class="bg-dark">
     <div class="container-fluid vh-100">
@@ -26,7 +28,7 @@
                                 </div>
                             <?php
                         } ?>
-                        <form action="./aksi/auth/login.php" class="row g-3 needs-validation" novalidate method="post">
+                        <form action="./aksi/auth/login.php" class="row g-3 needs-validation" novalidate method="post" id="login">
                             <div class="col">
                                 <div class="mb-3 row align-items-center">
                                     <label for="username" class="form-label col-md-2">Username</label>
@@ -50,5 +52,7 @@
     </div>
     <!-- Load Bootstrap -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Load Custom JS -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

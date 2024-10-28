@@ -6,6 +6,7 @@ $(document).ready(function(){
     const formBarangMasuk = document.querySelector('#form-barang-masuk');
     const formBarangKeluar = document.querySelector('#form-barang-keluar');
     const formUser = document.querySelector('#form-user');
+    const formLogin = document.querySelector('#login');
 
     if(tableElement){
         $(tableElement).DataTable();
@@ -182,6 +183,8 @@ $(document).ready(function(){
                 },
                 username:{
                     required:true,
+                    minlength: 4,
+                    alphanumeric: true
                 },
                 email:{
                     required:true,
@@ -199,6 +202,8 @@ $(document).ready(function(){
                 },
                 username:{
                     required:'Username harus diisi',
+                    minlength: 'Username minimal 4 karaketr',
+                    alphanumeric: 'Username tidak boleh ada spesial karakter'
                 },
                 email:{
                     required:'Email harus diisi',
@@ -208,6 +213,42 @@ $(document).ready(function(){
                 },
                 role:{
                     required:'Role harus diisi',
+                },
+            },
+            errorClass: 'invalid-feedback',
+            errorElement: 'div',
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-valid').removeClass('is-invalid');
+            },
+            submitHandler: function(form) {
+                form.submit(); // Kirim form jika valid
+            }
+        })
+    }
+
+    if(formLogin){
+        $(formLogin).validate({
+            rules:{
+                username:{
+                    required:true,
+                    minlength: 4,
+                    alphanumeric: true
+                },
+                password:{
+                    required:true,
+                },
+            },
+            messages:{
+                username:{
+                    required:'Username harus diisi',
+                    minlength: 'Username minimal 4 karakter',
+                    alphanumeric: 'Username tidak boleh ada spesial karakter'
+                },
+                password:{
+                    required:'Password harus diisi',
                 },
             },
             errorClass: 'invalid-feedback',

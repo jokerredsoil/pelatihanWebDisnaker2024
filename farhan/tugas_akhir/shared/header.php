@@ -12,6 +12,7 @@
     <!-- Jquery Plugin -->
     <script src="assets/libs/jquery/js/jquery-3.7.1.min.js"></script>
     <script src="assets/libs/jquery_validate/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
 
     <!-- Custom CSS -->
      <link rel="stylesheet" href="assets/css/style.css">
