@@ -56,6 +56,31 @@
             </div>
         </form>
     </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h4>Informasi Barang</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>Nama</th>
+                    <td>:</td>
+                    <td id="nama_barang"></td>
+                </tr>
+                <tr>
+                    <th>Deskripsi</th>
+                    <td>:</td>
+                    <td id="deskripsi_barang"></td>
+                </tr>
+                <tr>
+                    <th>Stock</th>
+                    <td>:</td>
+                    <td id="stock_barang"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="input_stock_barang" id="input_stock_barang">
+        </div>
+    </div>
 </div>
 <?php 
     include "shared/footer.php"

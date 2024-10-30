@@ -139,6 +139,12 @@ $(document).ready(function(){
     }
 
     if(formBarangKeluar){
+        $.validator.addMethod('isGreaterThanStock', function(value, element, param) {
+            if(!value || !$(param).val()){
+                return true;
+            }
+            return parseFloat(value) <= parseFloat($(param).val());
+        }, 'Stock pengambilan lebih besar dari stock barang')
         $(formBarangKeluar).validate({
             rules:{
                 barang_id:{
@@ -149,6 +155,7 @@ $(document).ready(function(){
                 },
                 stock:{
                     required:true,
+                    isGreaterThanStock:'#input_stock_barang'
                 },
             },
             messages:{
@@ -280,11 +287,13 @@ $(document).ready(function(){
                     $('#nama_barang').text('');
                     $('#deskripsi_barang').text('');
                     $('#stock_barang').text('');
+                    $('#input_stock_barang').val('');
                 },
                 success: function(data) {
                     $('#nama_barang').text(data.nama);
                     $('#deskripsi_barang').text(data.deskripsi);
                     $('#stock_barang').text(data.total_stock_barang);
+                    $('#input_stock_barang').val(data.total_stock_barang);
 
                     Swal.fire({
                         icon: "success",
