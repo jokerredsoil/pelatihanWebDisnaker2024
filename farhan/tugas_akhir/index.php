@@ -49,7 +49,9 @@
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Satuan</th>
                             <th class="text-center">Stock</th>
-                            <th class="text-center">Total Stock</th>
+                            <th class="text-center">Barang Masuk</th>
+                            <th class="text-center">Barang Keluar</th>
+                            <th class="text-center">Jumlah</th>
                             <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                 <th class="text-center">Aksi</th>
                             <?php }?>
@@ -67,6 +69,8 @@
                                 <td><?= $d['deskripsi'] ?></td>
                                 <td class="text-center"><?= $d['satuan'] ?></td>
                                 <td class="text-center"><?= $d['stock'] ?></td>
+                                <td class="text-center"><?= $d['total_masuk'] ?></td>
+                                <td class="text-center"><?= $d['total_keluar'] ?></td>
                                 <td class="text-center"><?= $d['total_stock_barang'] ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
