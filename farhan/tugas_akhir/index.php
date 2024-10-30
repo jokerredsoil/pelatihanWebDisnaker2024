@@ -3,7 +3,7 @@
     $active = "barang";
     include "shared/header.php";
     include "shared/side.php";
-    $res = mysqli_query($koneksi, "SELECT b.*, s.nama AS nama_suplier FROM barang AS b LEFT JOIN suplier AS s ON b.suplier_id = s.id AND s.deleted_at IS NULL WHERE b.deleted_at IS NULL");
+    $res = mysqli_query($koneksi, "SELECT b.*, s.nama AS nama_suplier, COALESCE(SUM(bm.stock), 0) as jumlah_masuk, COALESCE(SUM(bk.stock), 0) as jumlah_keluar, (COALESCE(SUM(bm.stock), 0) + b.stock - COALESCE(SUM(bk.stock), 0)) AS total_stock_barang FROM barang AS b LEFT JOIN suplier AS s ON b.suplier_id = s.id AND s.deleted_at IS NULL LEFT JOIN barang_masuk as bm ON bm.barang_id = b.id AND bm.deleted_at IS NULL LEFT JOIN barang_keluar as bk ON bk.barang_id = b.id AND bk.deleted_at IS NULL WHERE b.deleted_at IS NULL GROUP BY b.id");
 ?>
 <div class="col-sm-12 col-md-9">
     <div class="card">
@@ -44,7 +44,7 @@
                                 <td><?= $d['nama'] ?></td>
                                 <td><?= $d['deskripsi'] ?></td>
                                 <td class="text-center"><?= $d['satuan'] ?></td>
-                                <td class="text-center"><?= $d['stock'] ?></td>
+                                <td class="text-center"><?= $d['total_stock_barang'] ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
