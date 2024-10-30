@@ -3,7 +3,28 @@
     $active = "barang";
     include "shared/header.php";
     include "shared/side.php";
-    $res = mysqli_query($koneksi, "SELECT b.*, s.nama AS nama_suplier, COALESCE(SUM(bm.stock), 0) as jumlah_masuk, COALESCE(SUM(bk.stock), 0) as jumlah_keluar, (COALESCE(SUM(bm.stock), 0) + b.stock - COALESCE(SUM(bk.stock), 0)) AS total_stock_barang FROM barang AS b LEFT JOIN suplier AS s ON b.suplier_id = s.id AND s.deleted_at IS NULL LEFT JOIN barang_masuk as bm ON bm.barang_id = b.id AND bm.deleted_at IS NULL LEFT JOIN barang_keluar as bk ON bk.barang_id = b.id AND bk.deleted_at IS NULL WHERE b.deleted_at IS NULL GROUP BY b.id");
+    $res = mysqli_query($koneksi, "SELECT 
+        b.*, 
+        s.nama as nama_suplier, 
+        COALESCE(bm.total_masuk, 0) as total_masuk, 
+        COALESCE(bk.total_keluar, 0) as total_keluar,
+        (COALESCE(total_masuk, 0) + b.stock - COALESCE(total_keluar, 0)) AS total_stock_barang
+    FROM barang as b 
+    LEFT JOIN suplier as s ON s.id = b.suplier_id AND s.deleted_at IS NULL 
+    LEFT JOIN (
+        SELECT barang_id, SUM(stock) AS total_masuk 
+        FROM barang_masuk 
+        WHERE deleted_at IS NULL
+        GROUP BY barang_id
+    ) as bm ON bm.barang_id = b.id
+    LEFT JOIN (
+        SELECT barang_id, SUM(stock) AS total_keluar 
+        FROM barang_keluar 
+        WHERE deleted_at IS NULL
+        GROUP BY barang_id
+    ) as bk ON bk.barang_id = b.id
+    where b.deleted_at IS NULL
+    GROUP BY b.id");
 ?>
 <div class="col-sm-12 col-md-9">
     <div class="card">
@@ -28,6 +49,7 @@
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Satuan</th>
                             <th class="text-center">Stock</th>
+                            <th class="text-center">Total Stock</th>
                             <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                 <th class="text-center">Aksi</th>
                             <?php }?>
@@ -44,6 +66,7 @@
                                 <td><?= $d['nama'] ?></td>
                                 <td><?= $d['deskripsi'] ?></td>
                                 <td class="text-center"><?= $d['satuan'] ?></td>
+                                <td class="text-center"><?= $d['stock'] ?></td>
                                 <td class="text-center"><?= $d['total_stock_barang'] ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
