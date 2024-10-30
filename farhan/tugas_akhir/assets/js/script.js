@@ -7,6 +7,7 @@ $(document).ready(function(){
     const formBarangKeluar = document.querySelector('#form-barang-keluar');
     const formUser = document.querySelector('#form-user');
     const formLogin = document.querySelector('#login');
+    const selectElm = document.querySelector('#barang');
 
     if(tableElement){
         $(tableElement).DataTable();
@@ -262,6 +263,43 @@ $(document).ready(function(){
             submitHandler: function(form) {
                 form.submit(); // Kirim form jika valid
             }
+        })
+    }
+
+    if(selectElm){
+        $(selectElm).on('change',function(e){
+            let selectedVal = $(this).val();
+            $.ajax({
+                url: 'aksi/ajax_barang.php',
+                type: 'POST',
+                dataType: 'json',
+                data:{
+                    barang:selectedVal
+                },
+                beforeSend:function(){
+                    $('#nama_barang').text('');
+                    $('#deskripsi_barang').text('');
+                    $('#stock_barang').text('');
+                },
+                success: function(data) {
+                    $('#nama_barang').text(data.nama);
+                    $('#deskripsi_barang').text(data.deskripsi);
+                    $('#stock_barang').text(data.total_stock_barang);
+
+                    Swal.fire({
+                        icon: "success",
+                        title: "Suksess",
+                        text: "Suksess Ambil data Barang",
+                    });
+                },
+                error: function(e) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Gagal",
+                        text: "Gagal Ambil data barang",
+                    });
+                },
+            });
         })
     }
 })

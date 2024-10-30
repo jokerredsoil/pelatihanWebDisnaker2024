@@ -10,8 +10,10 @@
     <!-- Load Bootstrap -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Load DataTables -->
-     <script src="assets/libs/DataTables/datatables.min.js"></script>
-     <!-- Load Custom JS -->
-      <script src="assets/js/script.js"></script>
+    <script src="assets/libs/DataTables/datatables.min.js"></script>
+    <!-- Load SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Load Custom JS -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
