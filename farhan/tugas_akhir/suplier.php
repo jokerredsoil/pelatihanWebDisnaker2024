@@ -45,7 +45,7 @@
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
                                             <a href="./form_suplier.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
-                                            <a href="./aksi/hapus_suplier.php?id=<?=$d['id']?>" class="btn btn-danger">Hapus</a>
+                                            <a href="javascript:void(0)" class="btn btn-danger btn-delete-link" data-link="./aksi/hapus_suplier.php?id=<?=$d['id']?>" onclick="deleteAlert(this)">Hapus</a>
                                         </div>
                                     </td>
                                 <?php }?>

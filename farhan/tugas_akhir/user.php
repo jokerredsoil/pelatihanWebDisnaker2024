@@ -52,12 +52,12 @@
                                 <td class="text-center"><?= date('d-m-Y H:i',strtotime($d['created_at'])) ?></td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'Admin') {?>
                                     <td>
-                                        <div class="d-flex gap-2 justify-content-center">
+                                        <div class="d-flex gap-2 justify-content-between">
                                             <a href="./form_user.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
                                             <?php if($d['banned']) {?>
                                                 <a href="./aksi/tidak_banned_user.php?id=<?=$d['id']?>" class="btn btn-success">Unbanned</a>
                                             <?php }else{ ?>
-                                                <a href="./aksi/banned_user.php?id=<?=$d['id']?>" class="btn btn-danger">Banned</a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-delete-link" data-link="./aksi/banned_user.php?id=<?=$d['id']?>" onclick="deleteAlert(this)">Banned</a>
                                             <?php }?>
                                         </div>
                                     </td>

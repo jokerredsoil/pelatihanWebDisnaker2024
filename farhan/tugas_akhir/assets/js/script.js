@@ -37,6 +37,24 @@ function selectBarang(){
     });
 }
 
+function deleteAlert(e)
+{
+    let link = $(e).data('link');
+    Swal.fire({
+        icon:'warning',
+        title: "Yakin mau dihapus/dibanned?",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        cancelButtonText:'Tidak',
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            window.location.href = link;
+        }
+    });
+}
+
+
 $(document).ready(function(){
     'use strict'
     const tableElement = document.querySelector('.table-datatables');
