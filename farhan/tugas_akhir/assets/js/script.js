@@ -184,6 +184,44 @@ $(document).ready(function(){
     }
 
     if(formUser){
+        $.validator.addMethod("uniqueUsername", function(value, element) {
+            let isValid = false;
+            $.ajax({
+                url: '../../aksi/check_username.php',
+                type: 'POST',
+                async: false, // synchronous request
+                data: { username: value },
+                success: function(response) {
+                    if (response === "Username available.") {
+                        isValid = true;
+                    } else {
+                        $("#username-status").text(response);
+                        isValid = false;
+                    }
+                }
+            });
+            return isValid;
+        }, "Username sudah ada");
+
+        $.validator.addMethod("uniqueEmail", function(value, element) {
+            let isValid = false;
+            $.ajax({
+                url: '../../aksi/check_email.php',
+                type: 'POST',
+                async: false, // synchronous request
+                data: { email: value },
+                success: function(response) {
+                    if (response === "Email available.") {
+                        isValid = true;
+                    } else {
+                        $("#email-status").text(response);
+                        isValid = false;
+                    }
+                }
+            });
+            return isValid;
+        }, "Email sudah ada");
+
         $(formUser).validate({
             rules:{
                 nama:{
@@ -192,10 +230,12 @@ $(document).ready(function(){
                 username:{
                     required:true,
                     minlength: 4,
-                    alphanumeric: true
+                    alphanumeric: true,
+                    uniqueUsername: true
                 },
                 email:{
                     required:true,
+                    uniqueEmail: true
                 },
                 password:{
                     required:true,
