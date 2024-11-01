@@ -1,0 +1,8 @@
+SELECT u.*, r.role_name, k.nama_kelas
+FROM users as u
+JOIN roles as r
+ON u.roles_id = r.id
+LEFT JOIN user_kelas as uk
+ON uk.user_id = u.id
+LEFT JOIN kelas as k
+ON uk.kelas_id = k.id;

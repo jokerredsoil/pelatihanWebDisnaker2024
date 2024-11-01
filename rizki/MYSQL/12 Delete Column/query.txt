@@ -1,0 +1,1 @@
+ALTER TABLE `kelas` DROP `pengajar_id

@@ -1,0 +1,1 @@
+SELECT COUNT(roles_id), users.* FROM users GROUP BY roles_id;

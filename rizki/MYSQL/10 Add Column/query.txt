@@ -1,0 +1,1 @@
+ALTER TABLE `kelas` ADD `instruktur_id` INT NOT NULL AFTER `id`;

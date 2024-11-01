@@ -1,0 +1,1 @@
+UPDATE `roles` SET `role_name` = 'Siswa' WHERE `roles`.`id` = 3;

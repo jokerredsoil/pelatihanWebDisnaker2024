@@ -1,0 +1,78 @@
+-- PEMBUATAN TABEL ABSENSI
+CREATE TABLE `absensi` (
+  `id` int(11) NOT NULL,
+  `pembelajaran_id` int(11) NOT NULL,
+  `siswa_id` int(11) NOT NULL,
+  `status` enum('Hadir','Izin','Sakit') NOT NULL,
+  `tanggal_masuk` datetime NOT NULL
+);
+
+ALTER TABLE `absensi`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `absensi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- PEMBUATAN TABEL KELAS
+CREATE TABLE `kelas` (
+  `id` int(11) NOT NULL,
+  `instruktur_id` int(11) NOT NULL,
+  `nama_kelas` varchar(100) NOT NULL
+);
+  
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `kelas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- PEMBUATAN TABEL PEMBELAJARAN
+CREATE TABLE `pembelajaran` (
+  `id` int(11) NOT NULL,
+  `kelas_id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `tanggal_masuk` datetime NOT NULL
+);
+
+ALTER TABLE `pembelajaran`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `pembelajaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- PEMBUATAN TABEL ROLES
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `role_name` varchar(50) NOT NULL
+);
+  
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- PEMBUATAN TABEL USERS
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `roles_id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `alamat` text NOT NULL,
+  `kota_lahir` varchar(150) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `about` text NOT NULL,
+  `createf_at` datetime NOT NULL DEFAULT current_timestamp()
+);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- PEMBUATAN TABEL USERS_KELAS
+CREATE TABLE `user_kelas` (
+  `user_id` int(11) NOT NULL,
+  `kelas_id` int(11) NOT NULL
+);
+  
+ALTER TABLE `user_kelas`
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `kelas_id` (`kelas_id`);
