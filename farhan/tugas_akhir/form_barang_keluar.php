@@ -29,7 +29,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label class="form-label" for="barang">Barang</label>
-                            <select class="form-select" name="barang_id" id="barang">
+                            <select class="form-select" name="barang_id" id="barang" onchange="selectBarang()">
                                 <option value="">Pilih Barang</option>
                                 <?php 
                                     while ($data = mysqli_fetch_array($res)) {
