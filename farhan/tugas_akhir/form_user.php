@@ -3,6 +3,7 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] != 'Admin'){
         die('Akses Dibatasi');
     }
+    $active = "user";
     include "shared/header.php";
     include "shared/side.php";
     $link = './aksi/tambah_user.php';

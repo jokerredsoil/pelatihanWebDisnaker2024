@@ -3,6 +3,7 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] != 'Admin'){
         die('Akses Dibatasi');
     }
+    $active = "barang";
     include "shared/header.php";
     include "shared/side.php";
     $res = mysqli_query($koneksi, "SELECT * FROM suplier WHERE deleted_at IS NULL");
