@@ -54,7 +54,11 @@
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
                                             <a href="./form_user.php?id=<?=$d['id']?>" class="btn btn-warning">Edit</a>
-                                            <a href="./aksi/banned_user.php?id=<?=$d['id']?>" class="btn btn-danger">Banned</a>
+                                            <?php if($d['banned']) {?>
+                                                <a href="./aksi/tidak_banned_user.php?id=<?=$d['id']?>" class="btn btn-success">Unbanned</a>
+                                            <?php }else{ ?>
+                                                <a href="./aksi/banned_user.php?id=<?=$d['id']?>" class="btn btn-danger">Banned</a>
+                                            <?php }?>
                                         </div>
                                     </td>
                                 <?php }?>

@@ -4,27 +4,35 @@
     include "shared/header.php";
     include "shared/side.php";
     $res = mysqli_query($koneksi, "SELECT 
-        b.*, 
-        s.nama as nama_suplier, 
-        COALESCE(bm.total_masuk, 0) as total_masuk, 
-        COALESCE(bk.total_keluar, 0) as total_keluar,
-        (COALESCE(total_masuk, 0) + b.stock - COALESCE(total_keluar, 0)) AS total_stock_barang
-    FROM barang as b 
-    LEFT JOIN suplier as s ON s.id = b.suplier_id AND s.deleted_at IS NULL 
-    LEFT JOIN (
-        SELECT barang_id, SUM(stock) AS total_masuk 
-        FROM barang_masuk 
-        WHERE deleted_at IS NULL
-        GROUP BY barang_id
-    ) as bm ON bm.barang_id = b.id
-    LEFT JOIN (
-        SELECT barang_id, SUM(stock) AS total_keluar 
-        FROM barang_keluar 
-        WHERE deleted_at IS NULL
-        GROUP BY barang_id
-    ) as bk ON bk.barang_id = b.id
-    where b.deleted_at IS NULL
-    GROUP BY b.id");
+		b.id, 
+    b.nama,
+    b.stock, 
+    b.deskripsi,
+    b.satuan,
+    s.nama AS nama_suplier, 
+		COALESCE(bm.total_masuk, 0) AS total_masuk, 
+    COALESCE(bk.total_keluar, 0) AS total_keluar,
+    (COALESCE(bm.total_masuk, 0) + b.stock - COALESCE(bk.total_keluar, 0)) AS total_stock_barang
+	FROM 
+			barang AS b 
+	LEFT JOIN 
+			suplier AS s ON s.id = b.suplier_id AND s.deleted_at IS NULL 
+	LEFT JOIN (
+			SELECT barang_id, SUM(stock) AS total_masuk 
+			FROM barang_masuk 
+			WHERE deleted_at IS NULL
+			GROUP BY barang_id
+	) AS bm ON bm.barang_id = b.id
+	LEFT JOIN (
+			SELECT barang_id, SUM(stock) AS total_keluar 
+			FROM barang_keluar 
+			WHERE deleted_at IS NULL
+			GROUP BY barang_id
+	) AS bk ON bk.barang_id = b.id
+	WHERE 
+			b.deleted_at IS NULL
+	GROUP BY 
+			b.id, b.nama, b.stock, s.nama, b.deskripsi, b.satuan, bm.total_masuk, bk.total_keluar;");
 ?>
 <div class="col-sm-12 col-md-9">
     <div class="card">
