@@ -9,6 +9,7 @@
     b.stock, 
     b.deskripsi,
     b.satuan,
+    b.image,
     s.nama AS nama_suplier, 
 		COALESCE(bm.total_masuk, 0) AS total_masuk, 
     COALESCE(bk.total_keluar, 0) AS total_keluar,
@@ -32,7 +33,7 @@
 	WHERE 
 			b.deleted_at IS NULL
 	GROUP BY 
-			b.id, b.nama, b.stock, s.nama, b.deskripsi, b.satuan, bm.total_masuk, bk.total_keluar;");
+			b.id, b.nama, b.stock, s.nama, b.deskripsi, b.satuan, b.image, bm.total_masuk, bk.total_keluar;");
 ?>
 <div class="col-sm-12 col-md-9">
     <div class="card">
@@ -52,6 +53,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">No</th>
+                            <th class="text-center">Gambar</th>
                             <th class="text-center">Suplier</th>
                             <th class="text-center">Barang</th>
                             <th class="text-center">Deskripsi</th>
@@ -72,6 +74,11 @@
                         ?>
                             <tr>
                                 <td class="text-center"><?= $no ?></td>
+                                <?php if(!is_null($d['image'])) {?>
+                                    <td><img src="assets/upload/<?= $d['image'] ?>" width="80"></td>
+                                <?php }else{?>
+                                    <td>Belum ada Gambar</td>
+                                <?php }?>
                                 <td><?= $d['nama_suplier'] ?></td>
                                 <td><?= $d['nama'] ?></td>
                                 <td><?= $d['deskripsi'] ?></td>

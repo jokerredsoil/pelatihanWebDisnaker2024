@@ -20,11 +20,18 @@
         <div class="card-header">
             <h4>Tambah Barang</h4>
         </div>
-        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post" id="form-barang">
+        <form action="<?=$link?>" class="row g-3 needs-validation" novalidate method="post" id="form-barang" enctype="multipart/form-data">
             <?php if(isset($data_old)) {?>
                 <input type="hidden" name="barang" value="<?=$id?>">
             <?php }?>
             <div class="card-body">
+                <?php if(isset($_GET['pesan'])){
+                    ?>
+                        <div class="alert alert-light" role="alert">
+                            <?= str_replace('-',' ',$_GET['pesan']) ?>
+                        </div>
+                    <?php
+                } ?>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
@@ -55,6 +62,13 @@
                         <div class="mb-3">
                             <label class="form-label" for="stock">Stock</label>
                             <input class="form-control" type="number" name="stock" id="stock" placeholder="Masukkan Stock Barang" value="<?= isset($data_old) ? $data_old['stock'] :'' ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="gambar">Gambar</label>
+                            <input class="form-control" type="file" name="gambar" id="gambar">
+                            <?php if(isset($data_old['image'])) {?>
+                                <img class="mt-2" src="assets/upload/<?= $data_old['image'] ?>" style="max-width:150px;">
+                            <?php }?>
                         </div>
                     </div>
                 </div>
